@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :formularios
+  resources :areas
+  resources :departamentos
   resources :welcome, only: [:index]
   root 'welcome#index'
   
