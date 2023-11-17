@@ -1,14 +1,22 @@
 
-<div>  
+<div class="">  
+  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
   <%= link_to "Departamenos", departamentos_path %>
+  </div>
   <br> <!-- Salto de línea -->
+  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
   <%= link_to "Areas", areas_path %>
+  </div>
   <br> <!-- Salto de línea -->
+  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
   <%= link_to "Formulario", formularios_path %>
+  </div>
   <br> <!-- Salto de línea -->
+  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
   <% if user_signed_in? %>
    <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %>
    <% end %>
+  </div>
 </div>
 
 <div class="my-4 border-t border-gray-300"></div>
