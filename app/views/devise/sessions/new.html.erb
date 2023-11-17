@@ -1,26 +1,63 @@
-<h2 class="text-2xl font-bold text-gray-900">Log in</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Login Template</title>
+    <meta name="author" content="David Grzyb">
+    <meta name="description" content="">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "mb-8" }) do |f| %>
-  <div class="mb-4">
-    <%= f.label :email, class: "block text-sm font-medium text-gray-600" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 p-2 w-full border rounded" %>
-  </div>
+    <!-- Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
-  <div class="mb-4">
-    <%= f.label :password, class: "block text-sm font-medium text-gray-600" %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: "mt-1 p-2 w-full border rounded" %>
-  </div>
+        .font-family-karla {
+            font-family: karla;
+        }
+    </style>
+</head>
+<body class="bg-white font-family-karla h-screen">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="mb-4">
-      <%= f.check_box :remember_me, class: "mr-2" %>
-      <%= f.label :remember_me, class: "text-sm text-gray-600" %>
+    <div class="w-full flex flex-wrap">
+
+        <!-- Login Section -->
+        <div class="w-full md:w-1/2 flex flex-col">
+
+            <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
+                <a href="https://es.linkedin.com/posts/aylin-bautista-6b68711b8_ingeniera-biom%C3%A9dica-titulada-s%C3%B3lo-activity-7060797485073514496-EyoD?trk=public_profile_like_view" class="bg-black text-white font-bold text-xl p-4">ITT</a>
+            </div>
+
+            <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+                <p class="text-center text-3xl">Bienvenido</p>
+                <form class="flex flex-col pt-3 md:pt-8" onsubmit="event.preventDefault();">
+                    <div class="flex flex-col pt-4">
+                        <label for="email" class="text-lg">Usuario</label>
+                        <input type="email" id="email" placeholder="nombre de usuario" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+    
+                    <div class="flex flex-col pt-4">
+                        <label for="password" class="text-lg">Contraseña</label>
+                        <input type="password" id="password" placeholder="********" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+    
+                    <button type="submit"  class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8 rounded-md">
+                    Iniciar Sesion
+                    </button>
+                </form>
+                <div class="text-center pt-12 pb-12">
+                    <p>Olvidaste tu contraseña? <a href="register.html" class="underline font-semibold">Haz clic.</a></p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Image Section -->
+        <div class="w-1/2 shadow-2xl">
+            <img class="object-cover w-full h-screen hidden md:block" src="/assets/galgo.png">
+        </div>
     </div>
-  <% end %>
 
-  <div class="flex items-center">
-    <%= f.submit "Log in", class: "bg-blue-500 text-white p-2 rounded" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
+</html>
