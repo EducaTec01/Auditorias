@@ -1,22 +1,21 @@
+<div class="flex justify-center items-center h-screen w-screen bg-contain bg-center bg-no-repeat background-size" style="background-image: url('<%= asset_path 'EntradaTec.jpg' %>'); background-size: 100% 100%;">
+  <div class="grid grid-cols-2 gap-8">
+    <div>
+      <%= link_to "Departamentos", departamentos_path, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
+    </div>
 
-<div class="">  
-  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
-  <%= link_to "Departamenos", departamentos_path %>
-  </div>
-  <br> <!-- Salto de línea -->
-  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
-  <%= link_to "Areas", areas_path %>
-  </div>
-  <br> <!-- Salto de línea -->
-  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
-  <%= link_to "Formulario", formularios_path %>
-  </div>
-  <br> <!-- Salto de línea -->
-  <div class= "bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
-  <% if user_signed_in? %>
-   <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %>
-   <% end %>
+    <div>
+      <%= link_to "Áreas", areas_path, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
+    </div>
+
+    <div>
+      <%= link_to "Formularios", formularios_path, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
+    </div>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<div class="my-4 border-t border-gray-300"></div>
