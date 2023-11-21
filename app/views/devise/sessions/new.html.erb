@@ -24,38 +24,51 @@
         <!-- Login Section -->
         <div class="w-full md:w-1/2 flex flex-col">
 
-            <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                <a href="https://es.linkedin.com/posts/aylin-bautista-6b68711b8_ingeniera-biom%C3%A9dica-titulada-s%C3%B3lo-activity-7060797485073514496-EyoD?trk=public_profile_like_view" class="bg-black text-white font-bold text-xl p-4">ITT</a>
+            <div class="flex justify-center md:justify-start pt-10 md:pl-10 md:-mb-24">
+                <a href="#">
+                    <img src="/assets/ITTLogo.png" alt="Descripción de la imagen" class="w-20 h-20">
+                </a>
             </div>
 
             <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
                 <p class="text-center text-3xl">Bienvenido</p>
-                <form class="flex flex-col pt-3 md:pt-8" onsubmit="event.preventDefault();">
-                    <div class="flex flex-col pt-4">
-                        <label for="email" class="text-lg">Usuario</label>
-                        <input type="email" id="email" placeholder="nombre de usuario" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
-                    </div>
-    
-                    <div class="flex flex-col pt-4">
-                        <label for="password" class="text-lg">Contraseña</label>
-                        <input type="password" id="password" placeholder="********" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
-                    </div>
-    
-                    <button type="submit"  class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8 rounded-md">
-                    Iniciar Sesion
-                    </button>
-                </form>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "flex flex-col pt-3 md:pt-8" }) do |f| %>
+                        <div class="flex flex-col pt-4">
+                            <%= f.label :email, "Usuario", class: "text-lg" %>
+                            <%= f.email_field :email, id: "email", placeholder: "nombre de usuario", class: "shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline", autofocus: true, autocomplete: "email" %>
+                        </div>
+        
+                        <div class="flex flex-col pt-4">
+                            <%= f.label :password, "Contraseña", class: "text-lg" %>
+                            <%= f.password_field :password, id: "password", placeholder: "********", class: "shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline", autocomplete: "current-password" %>
+                        </div> 
+                        
+                        <% if devise_mapping.rememberable? %>
+                            <div class="flex items-center pt-4">
+                                <%= f.check_box :remember_me, class: "mr-2" %>
+                                <%= f.label :remember_me, "Recordar contraseña", class: "text-lg" %>
+                            </div>
+                        <% end %>
+                        
+                        <div class="flex flex-col pt-4">
+                            <%= f.submit "Iniciar Sesión", class: "bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-5 rounded-md" %>                     
+                        </div> 
+
+                    <% end %>
+                    
                 <div class="text-center pt-12 pb-12">
-                    <p>Olvidaste tu contraseña? <a href="register.html" class="underline font-semibold">Haz clic.</a></p>
+                    <p>¿Olvidaste tu contraseña? <a href="register.html" class="underline font-semibold">Haz clic.</a></p>
                 </div>
+
+                <!-- Implementar esta línea de código <%= render "devise/shared/links" %> -->
 
             </div>
 
         </div>
 
         <!-- Image Section -->
-        <div class="w-1/2 shadow-2xl">
-            <img class="object-cover w-full h-screen hidden md:block" src="/assets/galgo.png">
+        <div class="w-1/2 md:shadow-2xl">
+            <img class="object-cover w-full my-auto h-full hidden md:block sm:w-full lg:w-full" src="/assets/galgo.jpg">
         </div>
     </div>
 
