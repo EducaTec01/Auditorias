@@ -10,6 +10,15 @@ class FormulariosController < ApplicationController
   def show
   end
 
+  def informacion_especifica
+    @formularios = Formulario.find(params[:id])
+    # Lógica para obtener la información específica del artículo
+    # Puedes agregar lógica adicional según tus necesidades
+
+    # Renderiza la vista asociada
+    render 'informacion_especifica'
+  end
+
   # GET /formularios/new
   def new
     @formulario = Formulario.new
@@ -65,6 +74,10 @@ class FormulariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def formulario_params
-      params.require(:formulario).permit(:noAuditoria, :proceso, :fecha)
+      params.require(:formulario).permit(:noAuditoria, :proceso, :fecha, :asignacion_id, :departamento_id)
+    end
+
+    def authorize_admin_or_jefe
+      redirect_to root_path unless current_user.role_name.in?(['admin', 'jefe'])
     end
 end

@@ -1,19 +1,12 @@
-<div class="relative overflow-x-auto">
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Asignaciones</h1>
-  </div>
-  <br> <!-- Salto de línea -->
-
-  <div class="mx-auto">
+<div class="w-full">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <%= render @departamento %>
-  
-  <!-- Botón para el formulario de asignacion -->
-  <%= link_to 'Crear Asignación', new_asignacion_path(departamento_id: @departamento.id, nombre: @departamento.nombre), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
-  <br> <!-- Salto de línea -->
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Asignacions</h1>
+    <%= link_to "New asignacion", new_asignacion_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
 
   <table class="min-w-full bg-white border border-gray-200">
     <thead>
@@ -62,13 +55,4 @@
     <% end %>
   </tbody>
 </table>
-
-    <%= link_to "Edit this departamento", edit_departamento_path(@departamento), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this departamento", departamento_path(@departamento), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to "Back to departamentos", departamentos_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
-
-
-

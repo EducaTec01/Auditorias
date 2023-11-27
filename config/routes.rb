@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get 'navbar/home'
-  get 'navbar/about'
-  get 'navbar/contact'
-  resources :formularios
+  
+  resources :formulariotwos
+  resources :asignacions
+
+  resources :formularios do
+    member do
+      get 'informacion_especifica', to: 'formularios#informacion_especifica'
+    end
+  end
   resources :areas
   resources :departamentos
   resources :welcome, only: [:index]

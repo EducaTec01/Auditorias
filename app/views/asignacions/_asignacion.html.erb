@@ -1,0 +1,27 @@
+<div id="<%= dom_id asignacion %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Date:</strong>
+    <%= asignacion.date %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Descripcion:</strong>
+    <%= asignacion.descripcion %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= asignacion.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Departamento:</strong>
+    <%= asignacion.departamento_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this asignacion", asignacion, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this asignacion", edit_asignacion_path(asignacion), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
