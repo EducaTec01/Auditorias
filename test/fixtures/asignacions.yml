@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2023-11-22
+  descripcion: MyString
+  user: one
+  departamento: one
+
+two:
+  date: 2023-11-22
+  descripcion: MyString
+  user: two
+  departamento: two
