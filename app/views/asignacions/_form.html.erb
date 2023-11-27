@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <p>Departamento: <%= @departamento_nombre %></p>
+
   <div class="my-5">
     <%= form.label :date %>
     <%= form.date_field :date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
@@ -21,15 +23,12 @@
     <%= form.text_field :descripcion, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="field">
+    <%= form.label :user_id, 'Auditor:' %>
+    <%= form.collection_select(:user_id, User.auditors, :id, :nombre_completo, prompt: 'Seleccionar auditor') %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :departamento_id %>
-    <%= form.text_field :departamento_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
+  <%= form.hidden_field :departamento_id, value: @departamento_id %>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>

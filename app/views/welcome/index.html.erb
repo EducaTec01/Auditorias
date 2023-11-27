@@ -1,11 +1,16 @@
 
 <div>  
+  <%= link_to "Info", departamentos_path %>
+  <br> <!-- Salto de línea -->
+  <%= link_to "Usuarios", departamentos_path %>
+  <br> <!-- Salto de línea -->
   <%= link_to "Departamenos", departamentos_path %>
   <br> <!-- Salto de línea -->
-  <%= link_to "Areas", areas_path %>
+  <%= link_to "Asignacion", asignacions_path %>
   <br> <!-- Salto de línea -->
-  <%= link_to "Formulario", formularios_path %>
+  <%= link_to "Auditorias", formularios_path %>
   <br> <!-- Salto de línea -->
+
   <% if user_signed_in? %>
    <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %>
    <% end %>

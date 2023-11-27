@@ -13,6 +13,8 @@ class AsignacionsController < ApplicationController
   # GET /asignacions/new
   def new
     @asignacion = Asignacion.new
+    @departamento_id = params[:departamento_id]
+    @departamento_nombre = params[:nombre]
   end
 
   # GET /asignacions/1/edit
