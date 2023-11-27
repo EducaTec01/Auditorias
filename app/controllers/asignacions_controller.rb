@@ -4,6 +4,7 @@ class AsignacionsController < ApplicationController
   # GET /asignacions or /asignacions.json
   def index
     @asignacions = Asignacion.all
+    @formularios = Formulario.all
   end
 
   # GET /asignacions/1 or /asignacions/1.json

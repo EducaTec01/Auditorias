@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :formulariotwos
   resources :asignacions
 
-  resources :formularios
+  resources :formularios do
+    member do
+      get 'informacion_especifica', to: 'formularios#informacion_especifica'
+    end
+  end
   resources :areas
   resources :departamentos
   resources :welcome, only: [:index]

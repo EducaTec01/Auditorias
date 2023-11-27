@@ -3,6 +3,10 @@ class User < ApplicationRecord
   has_many :asignacion
   belongs_to :departamento
 
+  def role_name
+    role.try(:name)
+  end
+
   def self.auditors
     where(role_id: 3)
   end

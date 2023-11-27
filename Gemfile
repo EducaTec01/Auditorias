@@ -74,4 +74,4 @@ end
 gem "tailwindcss-rails", "~> 2.0"
 gem 'devise'
 gem "paperclip", "~> 6.0.0"
-
+gem "rolify"
