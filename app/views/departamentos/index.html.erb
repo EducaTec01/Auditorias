@@ -1,14 +1,30 @@
-<div class="w-full">
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+  .font-family-karla {
+      font-family: karla;
+  }
+</style>
+
+<!-- Tailwind -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    
+
+<div class="flex flex-col font-family-karla bg-white w-screen">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
+  <div class="flex justify-normal py-5">
     <h1 class="font-bold text-4xl">Departamentos</h1>
-    <%= link_to "New departamento", new_departamento_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="departamentos" class="min-w-full">
+  <div id="departamentos" class="flex-1 flex-col min-w-full grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
     <%= render @departamentos %>
   </div>
+  
+  <div class="flex py-4 justify-end">
+    <%= link_to "Nuevo departamento", new_departamento_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
 </div>
+
