@@ -8,6 +8,9 @@ class DepartamentosController < ApplicationController
 
   # GET /departamentos/1 or /departamentos/1.json
   def show
+    @departamentos = Departamento.find(params[:id])
+    @asignacions = @departamentos.asignacion.where(departamento_id: 1)
+    @formularios = @departamentos.formulario.where(departamento_id: 1)
   end
 
   # GET /departamentos/new

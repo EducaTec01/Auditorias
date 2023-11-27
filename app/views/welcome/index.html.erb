@@ -1,21 +1,78 @@
-<div class="flex justify-center items-center h-screen w-screen bg-contain bg-center bg-no-repeat background-size" style="background-image: url('<%= asset_path 'EntradaTec.jpg' %>'); background-size: 100% 100%;">
-  <div class="grid grid-cols-2 gap-8">
-    <div>
-      <%= link_to "Departamentos", departamentos_path, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
 
-    <div>
-      <%= link_to "Áreas", areas_path, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>AUDITEC - Información de Auditorías</title>
+</head>
 
-    <div>
-      <%= link_to "Formularios", formularios_path, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
-    </div>
+<body class="bg-gradient-to-r from-green-300 to-blue-600">
+    <div class="flex flex-col items-center min-h-screen">
+        <div >
+            <div class="text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl font-bold mt-8 text-lg text-center mb-6">
+                Bienvenido a AUDITEC
+            </div>
+            <div class="text-white font-sans text-xl md:text-2xl lg:text-3xl xl:text-2xl text-center max-w-screen-xl mx-auto">
+                Te damos la bienvenida a Auditec, el nuevo servicio de gestión de auditorías en el cual se cuenta con un sistema digital optimizado para la realización de las auditorías en el Instituto Tecnológico de Tijuana.
+            </div>
 
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "bg-blue-500 text-white py-6 px-8 rounded-lg hover:bg-blue-700 text-2xl w-full block text-center" %>
-      <% end %>
+        </div>
+        <br>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div class="flex flex-col items-center mb-8">
+            <!-- INSERTAR IMAGEN AQUÍ -->
+            <div class="max-w-md bg-white rounded-lg overflow-hidden shadow-lg">
+            <%= image_tag("Auditoria2.jpg", alt: "Logo", class: "w-50 h-50") %>
+           
+            </div>
+                <div class="text-white text-lg text-center">
+                    <h2 class="font-bold mb-2">¿Qué es una Auditoría?</h2>
+                    <p class="text-justify">Una auditoría es un examen sistemático de las actividades o procesos de una organización para asegurar que se están cumpliendo los estándares establecidos.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center mb-8">
+                <!-- INSERTAR IMAGEN AQUÍ -->
+                <div class="max-w-md bg-white rounded-lg overflow-hidden shadow-lg">
+                <%= image_tag("Auditoria1.jpg", alt: "Logo", class: "w-50 h-50") %>
+               
+                </div>
+                        <div class="text-white text-lg text-center">
+                    <h2 class="font-bold mb-2">Importancia de las Auditorías</h2>
+                    <p class="text-justify">Las auditorías son cruciales para garantizar la transparencia, eficiencia y cumplimiento de normativas en las operaciones de una organización, asegurando la mejora continua.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div class="flex flex-col items-center mb-8">
+                <div class="text-white text-lg text-center mb-4">
+                    <h2 class="font-bold mb-2">UN POCO DE AUDITEC </h2>
+                    <p class="text-justify">AUDITEC elimina la necesidad de papeleo engorroso al proporcionar una plataforma digital para los flujos de trabajo de auditoría. Desde la iniciación hasta la finalización, todo el proceso de auditoría está integrado de manera fluida, permitiendo una colaboración eficiente entre los miembros del equipo</p>
+                </div>
+                <!-- INSERTAR IMAGEN AQUÍ -->
+                <div class="max-w-md bg-white rounded-lg overflow-hidden shadow-lg">
+                <%= image_tag("Auditoria3.png", alt: "Logo", class: "w-50 h-50") %>
+               
+                </div>
+            </div>
+
+              <div class="flex flex-col items-center mb-8">
+              <!-- INSERTAR IMAGEN AQUÍ -->
+              <div class="max-w-md bg-white rounded-lg overflow-hidden shadow-lg">
+              <%= image_tag("Auditoria4.jpg", alt: "Logo", class: "w-50 h-50") %>    
+              </div>
+              <div class="text-white text-lg text-center">
+                <h2 class="font-bold mb-2">Monitoreo</h2>
+                <p class="text-justify">Mantente informado en cada etapa de la auditoría con capacidades de monitoreo en tiempo real. Sigue el progreso, identifica cuellos de botella y recibe actualizaciones instantáneas sobre el estado de la auditoría, asegurando una toma de decisiones oportuna e informada</p>
+              </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+</body>
+
+</html>
+
+

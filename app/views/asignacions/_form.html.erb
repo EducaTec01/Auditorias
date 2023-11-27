@@ -1,0 +1,39 @@
+<%= form_with(model: asignacion, class: "contents") do |form| %>
+  <% if asignacion.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(asignacion.errors.count, "error") %> prohibited this asignacion from being saved:</h2>
+
+      <ul>
+        <% asignacion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="margin-top: 25px;">
+    <p>Departamento: <%= @departamento_nombre %></p>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :date %>
+    <%= form.date_field :date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="field" style="margin-bottom: 25px;">
+    <%= form.label :user_id, 'Auditor:' %>
+    <%= form.collection_select(:user_id, User.auditors, :id, :nombre_completo, prompt: 'Seleccionar auditor') %>
+</div>
+
+
+  <%= form.hidden_field :departamento_id, value: @departamento_id %>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
