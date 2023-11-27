@@ -52,9 +52,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_26_233848) do
     t.string "evidencia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "evidenciatwo"
     t.integer "asignacion_id", null: false
     t.integer "departamento_id", null: false
-    t.string "evidenciatwo"
     t.index ["asignacion_id"], name: "index_formulariotwos_on_asignacion_id"
     t.index ["departamento_id"], name: "index_formulariotwos_on_departamento_id"
   end
