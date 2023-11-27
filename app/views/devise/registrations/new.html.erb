@@ -1,6 +1,7 @@
-<section class="flex items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900">
+<body class="bg-gradient-to-r from-purple-200 to-blue-600">
+
   <div class="flex">   
-    <div style="max-width: 800px; margin-right: 100px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div style="max-width: 800px; margin-right: 100px; background-color: rgba(255, 255, 255, 0.8); border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
       <div style="padding: 20px;">
 
         <h1 style="font-size: 1.5rem; font-weight: bold; text-align: center; margin-bottom: 20px;">Usuarios</h1>
@@ -20,7 +21,8 @@
                 <td style="padding: 10px;"><%= ['Auditado', 'Auditor'].sample %></td>
                 <td style="padding: 10px;"><%= ['Sistemas', 'Industrial'].sample %></td>
                 <td style="padding: 10px;">
-                      <button style="background-color: #e74c3c; color: #fff; padding: 8px 12px; border: none; border-radius: 10px; cursor: pointer;">Eliminar</button>
+                  <button style="background-color: #e74c3c; color: #fff; padding: 8px 12px; border: none; border-radius: 10px; cursor: pointer;">Eliminar</button>
+                  <button style="background-color: Purple; color: #fff; padding: 8px 12px; border: none; border-radius: 10px; cursor: pointer;">Modificar</button>
                 </td>
               </tr>
             <% end %>
@@ -30,8 +32,8 @@
     </div>
 
     
-    <div style="width: 500px; margin: auto;">
-      <div class="bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 flex flex-col items-center justify-center">
+    <div style="width: 500px; margin: auto; background-color: rgba(255, 255, 255, 0.8); border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">
             Ingresar
@@ -39,34 +41,15 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-4 md:space-y-6" }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             
-          <div class="field">
-            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label><br />
-            <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-          </div>
-          
-          <div class="field">
+            <div class="field">
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label><br />
+              <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            
+            <div class="field">
               <%= f.label :Correo_Eletronico, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %><br />
               <%= f.email_field :email, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", autofocus: true, autocomplete: "email" %>
             </div>
-
-          <div class="field">
-            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rol</label><br />
-            <input type="checkbox" class="mr-2">
-            <label class="text-sm font-medium text-gray-900 dark:text-white">Auditor</label>
-            <input type="checkbox" class="mr-2">
-            <label class="text-sm font-medium text-gray-900 dark:text-white">Auditado</label>
-          </div>
-
-          <div class="field">
-            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Carrera</label><br />
-            
-            <select class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-              <option value="Sistemas">Sistemas</option>
-              <option value="Industrial">Industrial</option>
-            </select>
-            </div>
-
-            
 
             <div class="field">
               <%= f.label :Contraseña, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
@@ -88,7 +71,8 @@
 
           <%= render "devise/shared/links" %>
         </div>
-      </div>
+      
     </div>
   </div>
-</section>
+
+</body>
