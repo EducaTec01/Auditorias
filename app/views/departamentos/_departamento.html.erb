@@ -1,17 +1,41 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+  .font-family-karla {
+      font-family: karla;
+  }
+</style>
+
+<!-- Tailwind -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  
+
 <div id="<%= dom_id departamento %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Nombre:</strong>
-    <%= departamento.nombre %>
-  </p>
+  <div class="flex flex-col border-solid border-2 border-emerald-200 rounded-lg bg-white text-left mb-4 justify-normal">
+    <div class="flex bg-blue-200 py-1 justify-between items-center">
+      <p class="text-2xl px-4">
+        <%= departamento.nombre %>
+      </p>
+      <% if action_name != "show" %>
+        <div>
+          <%= link_to "Editar", edit_departamento_path(departamento), class: "rounded-lg py-2 px-3 m-1 bg-gray-100 inline-block font-medium" %>         
+        </div>
+      <% end %>      
+    </div>
+  
+    <div class="px-6 py-3">    
+      <p class="my-5 text-lg text-2xl">
+        <strong class="block font-medium mb-1">Descripción:</strong>
+        <%= departamento.descripcion %>
+      </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Descripcion:</strong>
-    <%= departamento.descripcion %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this departamento", departamento, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this departamento", edit_departamento_path(departamento), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+      <% if action_name != "show" %>
+        <div class="flex justify-center">
+          <%= link_to "Mostrar departamento", departamento, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>          
+        </div>
+      <% end %>
+    </div>  
+  </div> 
 </div>
+
+

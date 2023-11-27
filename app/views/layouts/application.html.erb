@@ -12,11 +12,11 @@
   </head>
 
   <body>
-    <% unless controller_name == 'sessions' && action_name == 'new' %>
+    <% unless (controller_name == 'sessions' && action_name == 'new') %>
       <%= render "/shared/navbar" %>
     <% end %>
 
-    <main class="container mx-auto mt-0 px-5 flex h-full">
+    <main class="mx-auto mt-0 px-5 flex h-screen">
       <%= yield %>
     </main>
   </body>
