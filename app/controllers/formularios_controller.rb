@@ -65,6 +65,6 @@ class FormulariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def formulario_params
-      params.require(:formulario).permit(:noAuditoria, :proceso, :fecha)
+      params.require(:formulario).permit(:noAuditoria, :proceso, :fecha, :asignacion_id, :departamento_id)
     end
 end

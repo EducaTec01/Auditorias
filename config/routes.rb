@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :formulariotwos
+  resources :asignacions
   resources :formularios
   resources :areas
   resources :departamentos
