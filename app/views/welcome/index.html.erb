@@ -1,19 +1,26 @@
+<body class="bg-gradient-to-r from-purple-200 to-blue-600">
+  <div class="flex flex-col items-center min-h-screen w-screen">
+    <div class="mb-5 w-1/4 h-1/4">
 
-<div>  
-  <%= link_to "Info", departamentos_path %>
-  <br> <!-- Salto de línea -->
-  <%= link_to "Usuarios", departamentos_path %>
-  <br> <!-- Salto de línea -->
-  <%= link_to "Departamenos", departamentos_path %>
-  <br> <!-- Salto de línea -->
-  <%= link_to "Asignacion", asignacions_path %>
-  <br> <!-- Salto de línea -->
-  <%= link_to "Auditorias", formularios_path %>
-  <br> <!-- Salto de línea -->
+      <div class="text-white text-3xl font-bold mt-10" style="text-align: justify;">
+        Bienvenido a AUDITEC
+      </div>
+      <div class="text-white text-sm mt-2" style="text-align: justify;">
+        Te damos la bienvenida a Auditec, el nuevo servicio de gestión de auditorías en el cual se cuenta con un sistema digital optimizado para la realización de las auditorías en el Instituto Tecnológico de Tijuana. Selecciona un botón para continuar o deslízate hacia abajo para ver las instrucciones.
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-8 mt-8">
+      <div>
+        <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full block border border-black">
+          Auditores
+        </button>
+      </div>
 
-  <% if user_signed_in? %>
-   <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %>
-   <% end %>
-</div>
-
-<div class="my-4 border-t border-gray-300"></div>
+      <div>
+        <button type="button" class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full block border border-black">
+          Auditados
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
